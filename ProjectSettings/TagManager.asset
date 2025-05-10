@@ -8,13 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Item
+  - ProjectileEnemy
+  - ProjectilePlayer
   - 
   - 
   - 
