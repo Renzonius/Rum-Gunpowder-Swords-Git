@@ -4641,6 +4641,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2003999692}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: FirstWave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1768320520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7574,6 +7586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c4cc8c46a71b04aac121b3b6267a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timerDuration: 3
+  _bridgeController: {fileID: 599394348}
 --- !u!1 &2016929713
 GameObject:
   m_ObjectHideFlags: 0
@@ -7775,6 +7789,8 @@ MonoBehaviour:
   _sceneController: {fileID: 2083748844}
   _timerSignal: {fileID: 377104000}
   _timerDuration: 3
+  _winMenu: {fileID: 1888702286}
+  _loseMenu: {fileID: 1658370456}
 --- !u!1 &2083748842
 GameObject:
   m_ObjectHideFlags: 0
@@ -7901,7 +7917,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 14, y: 1}
+  m_Size: {x: 0, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
