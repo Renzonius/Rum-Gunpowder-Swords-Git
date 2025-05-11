@@ -33,7 +33,6 @@ public class TimerSignal : MonoBehaviour
             _timerText.text = durationTimer.ToString();
             await Task.Delay(TimeSpan.FromSeconds(1));
             durationTimer --;
-            Debug.Log($"Starting in {durationTimer} seconds...");
         }
         _timerText.text = "Start!";
         await Task.Delay(TimeSpan.FromSeconds(1));
