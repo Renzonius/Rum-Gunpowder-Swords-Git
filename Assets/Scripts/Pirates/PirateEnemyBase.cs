@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PirateEnemyBase : MonoBehaviour, IDamageable
+public class PirateEnemyBase : MonoBehaviour, IDamageable, IPoolable
 {
     private IMovable _movement;
+    protected ObjectPool<PirateEnemyBase> basePool;
 
     [Header("ENEMY SETTINGS")]
     [SerializeField] private int _life = 100;
@@ -23,10 +24,20 @@ public class PirateEnemyBase : MonoBehaviour, IDamageable
                 //Restar pirata a la oleada.
                 //Actualizar el puntaje del jugador.
 
-                //CancelInvoke("Desactivar");
-                //pool.RegresarObjeto(this);
+                CancelInvoke("Deactivate");
+                basePool.ReturnObject(this);
             }
         }
+    }
+    public void Activate()
+    {
+        gameObject.SetActive(true);
+        _movement?.Move();
+        Invoke("Deactivate", 10f);
+    }
+    public void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }
 

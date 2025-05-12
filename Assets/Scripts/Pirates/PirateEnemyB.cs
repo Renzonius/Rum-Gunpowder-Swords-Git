@@ -10,8 +10,8 @@ public class PirateEnemyB : PirateEnemyBase
         if (tri.CompareTag("PlayerShip"))
         {
             //Restar pirata a la oleada.
-            //CancelInvoke("Desactivar");
-            //pool.RegresarObjeto(this);
+            base.CancelInvoke("Deactivate");
+            basePool.ReturnObject(this);
         }
     }
 }
