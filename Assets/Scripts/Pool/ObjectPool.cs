@@ -23,16 +23,20 @@ public class ObjectPool<T> : MonoBehaviour where T : Component, IPoolable
 
     public T GetObject()
     {
-        if (!gameObject.activeInHierarchy) return null; // Evita generar si el GameObject est� desactivado
+        if (!gameObject.activeInHierarchy) return null;
 
         if (pool.Count <= 0)
         {
-            // Si no hay objetos disponibles en el pool, creamos uno nuevo
             CreateObject();
         }
 
         T objeto = pool.Dequeue();
-        objeto.Activate(); // Activamos el objeto antes de devolverlo
+        // Asignar el pool si el objeto es PirateEnemyBase
+        if (objeto is PirateEnemyBase enemy)
+        {
+            enemy.SetPool(this as ObjectPool<PirateEnemyBase>);
+        }
+        objeto.Activate();
         return objeto;
     }
 
@@ -51,11 +55,16 @@ public class ObjectPool<T> : MonoBehaviour where T : Component, IPoolable
 
     private void CreateObject()
     {
-        // Instanciamos un nuevo objeto y lo desactivamos
         T nuevoObjeto = Instantiate(_prefabObject);
+        // Asignar el pool si el objeto es PirateEnemyBase
+        if (nuevoObjeto is PirateEnemyBase enemy)
+        {
+            enemy.SetPool(this as ObjectPool<PirateEnemyBase>);
+        }
         nuevoObjeto.Deactivate();
-        pool.Enqueue(nuevoObjeto); // Lo agregamos al pool
+        pool.Enqueue(nuevoObjeto);
         nuevoObjeto.transform.SetParent(_objectContainer.transform);
     }
+
 
 }

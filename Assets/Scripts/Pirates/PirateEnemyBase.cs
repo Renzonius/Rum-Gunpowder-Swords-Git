@@ -39,5 +39,10 @@ public class PirateEnemyBase : MonoBehaviour, IDamageable, IPoolable
     {
         gameObject.SetActive(false);
     }
+
+    public void SetPool(ObjectPool<PirateEnemyBase> pool)
+    {
+        basePool = pool;
+    }
 }
 

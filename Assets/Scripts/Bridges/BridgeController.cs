@@ -26,18 +26,18 @@ public class BridgeController : MonoBehaviour
         targetSize = Mathf.Clamp(targetSize, tileMinSize, tileMaxSize);
 
         // Limitar la cantidad de elementos a modificar al tamaño del arreglo.
-        count = Mathf.Clamp(count, 1, bridges.Length);
+        count = Mathf.Clamp(count, 0, bridges.Length);
 
         switch (count)
         {
-            case 1:
+            case 0:
                 bridges[0].ActivateBridge(targetSize, duration);
                 break;
-            case 2:
+            case 1:
                 bridges[1].ActivateBridge(targetSize, duration);
                 bridges[2].ActivateBridge(targetSize, duration);
                 break;
-            case 3:
+            case 2:
                 bridges[0].ActivateBridge(targetSize, duration);
                 bridges[1].ActivateBridge(targetSize, duration);
                 bridges[2].ActivateBridge(targetSize, duration);
