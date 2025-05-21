@@ -283,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 144330855}
   - component: {fileID: 144330856}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SpriteA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,7 +648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 284173843}
   - component: {fileID: 284173844}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SpriteB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,6 +840,11 @@ Transform:
   - {fileID: 1027117017}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &365808069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7628422137356458035, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+  m_PrefabInstance: {fileID: 1126068269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &377103996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,6 +1400,7 @@ GameObject:
   - component: {fileID: 545855980}
   - component: {fileID: 545855979}
   - component: {fileID: 545855978}
+  - component: {fileID: 545855983}
   m_Layer: 6
   m_Name: PLAYER
   m_TagString: Untagged
@@ -1458,11 +1464,19 @@ MonoBehaviour:
     m_ActionId: 79787be2-2159-4ec4-95f7-6d55993a6f1b
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a6e960b3-47c7-4fe6-a49c-cb596e11b7be
-    m_ActionName: Player/Look[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 545855983}
+        m_TargetAssemblyTypeName: PlayerShooting, Assembly-CSharp
+        m_MethodName: Shoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e480d52a-54d2-41f5-bfa1-3911dd5e9115
     m_ActionName: Player/Fire[/Keyboard/space]
   - m_PersistentCalls:
@@ -1599,6 +1613,21 @@ Transform:
   - {fileID: 2041352340}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &545855983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545855977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa38132d3aa51f4db0acd48d7193c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBulletPrefab: {fileID: 365808069}
+  bulletSpawnPoint: {fileID: 2041352340}
+  _canShoot: 1
 --- !u!1 &555215591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,7 +1638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 555215592}
   - component: {fileID: 555215593}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3068,6 +3097,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101704074}
   m_CullTransparentMesh: 1
+--- !u!1001 &1126068269
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2041352340}
+    m_Modifications:
+    - target: {fileID: 73431383741619202, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: playerShooting
+      value: 
+      objectReference: {fileID: 545855983}
+    - target: {fileID: 6378297961587023325, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378297961587023325, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378297961587023325, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378297961587023325, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378297961587023325, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378297961587023325, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378297961587023325, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378297961587023325, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378297961587023325, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6378297961587023325, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7628422137356458035, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+      propertyPath: m_Name
+      value: BulletPlayer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+--- !u!4 &1126068270 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6378297961587023325, guid: feee56cb038b5f04f9a446a03b8fba17, type: 3}
+  m_PrefabInstance: {fileID: 1126068269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1129678678
 GameObject:
   m_ObjectHideFlags: 0
@@ -8397,10 +8492,11 @@ Transform:
   m_GameObject: {fileID: 2041352339}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.75, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1126068270}
   m_Father: {fileID: 545855982}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2042937210

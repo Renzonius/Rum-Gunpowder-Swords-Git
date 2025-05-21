@@ -8,7 +8,7 @@ public class PirateEnemyBase : MonoBehaviour, IDamageable, IPoolable
     protected ObjectPool<PirateEnemyBase> basePool;
 
     [Header("ENEMY SETTINGS")]
-    [SerializeField] private int _life = 100;
+    [SerializeField] private int _health = 100;
     [SerializeField] private int _scoreValue = 100;
 
     private void Awake()
@@ -18,10 +18,10 @@ public class PirateEnemyBase : MonoBehaviour, IDamageable, IPoolable
     public void TakeDamage(int damageValue)
     {
         {
-            _life = Mathf.Max(_life - damageValue, 0);
-            if (_life <= 0)
+            _health = Mathf.Max(_health - damageValue, 0);
+            if (_health <= 0)
             {
-                //Restar pirata a la oleada.
+                WaveController.Instance.subtractEnemy();
                 //Actualizar el puntaje del jugador.
 
                 CancelInvoke("Deactivate");
