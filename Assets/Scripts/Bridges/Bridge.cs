@@ -38,5 +38,6 @@ public class Bridge : MonoBehaviour
 
         // Asegurarse de que el tamaño final sea exactamente el objetivo.
         bridgeSprite.size = targetScale;
+        CameraShake.Instance.Shake(0.5f, 0.2f, 0.5f);
     }
 }
