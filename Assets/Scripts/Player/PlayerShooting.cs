@@ -21,8 +21,8 @@ public class PlayerShooting : MonoBehaviour
     {
         if ((_canShoot) && context.phase == InputActionPhase.Performed)
         {
-            playerBulletPrefab.SetActive(true);
             playerBulletPrefab.transform.position = bulletSpawnPoint.position;
+            playerBulletPrefab.SetActive(true);
             _canShoot = false;
             //_animator.SetTrigger("Ataca");
         }
