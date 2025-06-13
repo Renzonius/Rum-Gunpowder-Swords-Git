@@ -8,9 +8,6 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform playerTransform;
 
 
-
-
-
     private void OnTriggerEnter2D(Collider2D tri)
     {
         string tag = tri.gameObject.tag;

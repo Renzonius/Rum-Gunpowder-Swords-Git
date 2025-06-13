@@ -1148,7 +1148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &449124820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1540,6 +1540,7 @@ GameObject:
   - component: {fileID: 545855982}
   - component: {fileID: 545855981}
   - component: {fileID: 545855980}
+  - component: {fileID: 545855985}
   - component: {fileID: 545855979}
   - component: {fileID: 545855978}
   - component: {fileID: 545855983}
@@ -1565,6 +1566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseRb: {fileID: 545855980}
   baseSpeed: 7
+  animator: {fileID: 545855985}
 --- !u!114 &545855979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1771,6 +1773,7 @@ MonoBehaviour:
   playerBulletPrefab: {fileID: 365808069}
   bulletSpawnPoint: {fileID: 2041352340}
   _canShoot: 1
+  _animator: {fileID: 545855985}
 --- !u!114 &545855984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1784,6 +1787,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 545855982}
+--- !u!95 &545855985
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545855977}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d84275a45fb5254bb4a70f17c53ba16, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &549506610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1894,7 +1918,7 @@ Transform:
   m_GameObject: {fileID: 555215591}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: -1, z: 0}
+  m_LocalPosition: {x: 9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2949,7 +2973,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1492811577}
@@ -2971,7 +2995,7 @@ MonoBehaviour:
   playerTransform: {fileID: 545855982}
   handTransform: {fileID: 2064110292}
   maxShadowHandSize: {x: 2.5, y: 2.5}
-  minShadowHandSize: {x: 0.25, y: 0.25}
+  minShadowHandSize: {x: 0.5, y: 0.5}
 --- !u!212 &1025330549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3784,7 +3808,7 @@ Transform:
   m_GameObject: {fileID: 1164869439}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: -1, z: 0}
+  m_LocalPosition: {x: -9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5179,7 +5203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1567670423
 Transform:
   m_ObjectHideFlags: 0
@@ -5215,9 +5239,9 @@ MonoBehaviour:
   hand: {fileID: 2064110291}
   handAttack: {fileID: 1899847087}
   handShadow: {fileID: 1025330546}
-  followPlayerTime: 3
-  attackTime: 4
-  timeToRestart: 3
+  followPlayerTime: 2
+  attackTime: 3
+  timeToRestart: 2
 --- !u!1 &1583361328
 GameObject:
   m_ObjectHideFlags: 0

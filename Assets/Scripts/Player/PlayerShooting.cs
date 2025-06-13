@@ -11,7 +11,7 @@ public class PlayerShooting : MonoBehaviour
 
     public bool CanShoot { get => _canShoot; set => _canShoot = value; }
 
-    //[SerializeField] private Animator _animator;
+    [SerializeField] private Animator _animator;
 
     private void Awake()
     {
@@ -21,10 +21,10 @@ public class PlayerShooting : MonoBehaviour
     {
         if ((_canShoot) && context.phase == InputActionPhase.Performed)
         {
+            _animator.SetTrigger("Attack");
             playerBulletPrefab.transform.position = bulletSpawnPoint.position;
             playerBulletPrefab.SetActive(true);
             _canShoot = false;
-            //_animator.SetTrigger("Ataca");
         }
     }
 

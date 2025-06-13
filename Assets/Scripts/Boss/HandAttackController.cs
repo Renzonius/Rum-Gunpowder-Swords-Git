@@ -58,7 +58,7 @@ public class HandAttackController : MonoBehaviour
             yield return null;
         }
         transform.position = end;
-        CameraShake.Instance.Shake(amplitude, frequency, duration); // Assuming you have a CameraShake script to handle camera shaking
+        CameraShake.Instance.Shake(amplitude, frequency, duration); //efecto shake.
         boxCollider2D.enabled = true;
     }
 
