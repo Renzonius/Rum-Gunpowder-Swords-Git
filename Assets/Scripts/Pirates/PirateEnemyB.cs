@@ -5,6 +5,7 @@ using UnityEngine;
 public class PirateEnemyB : PirateEnemyBase
 {
     // Manejamos los layers de colisiones y excluimos al jugador.
+
     private void OnTriggerEnter2D(Collider2D tri)
     {
         if (tri.CompareTag("PlayerShip"))

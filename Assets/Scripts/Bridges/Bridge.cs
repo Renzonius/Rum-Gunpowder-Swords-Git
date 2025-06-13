@@ -6,7 +6,10 @@ using UnityEngine;
 public class Bridge : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer bridgeSprite;
-
+    [Header ("CAMERA SHAKE SETTINGS")]
+    [SerializeField] private float shakeDuration = 0.5f;
+    [SerializeField] private float shakeAmplitude = 0.5f;
+    [SerializeField] private float shakeFrequency = 0.2f;
     private void Awake()
     {
         bridgeSprite = GetComponent<SpriteRenderer>();
@@ -38,6 +41,6 @@ public class Bridge : MonoBehaviour
 
         // Asegurarse de que el tamaño final sea exactamente el objetivo.
         bridgeSprite.size = targetScale;
-        CameraShake.Instance.Shake(0.5f, 0.2f, 0.5f);
+        CameraShake.Instance.Shake(shakeAmplitude, shakeFrequency, shakeDuration);
     }
 }
