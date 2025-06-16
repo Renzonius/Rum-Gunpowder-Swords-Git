@@ -13,10 +13,4 @@ public class BaseProjectile : MonoBehaviour
     {
         TryGetComponent(out baseMovement);
     }
-
-    private void Start()
-    {
-        baseMovement?.Move();
-    }
-
 }
